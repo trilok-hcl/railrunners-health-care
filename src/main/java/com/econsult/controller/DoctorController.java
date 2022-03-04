@@ -4,13 +4,11 @@ import com.econsult.model.Consultation;
 import com.econsult.model.Doctor;
 import com.econsult.repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class DoctorController {
     @Autowired
@@ -24,6 +22,16 @@ public class DoctorController {
     @PostMapping(value = "/doctor")
     public void save(@RequestBody Doctor doctor){
         doctorRepository.save(doctor);
+    }
+
+//    @DeleteMapping(value = "/doctor")
+//    public void delete(@RequestBody String doctorId){
+//        doctorRepository.deleteById(doctorId);
+//    }
+
+    @DeleteMapping(value = "/doctor")
+    public void deleteAll(){
+        doctorRepository.deleteAll();
     }
 
 

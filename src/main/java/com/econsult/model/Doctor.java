@@ -16,9 +16,8 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Doctor {
     @Id
-    String doctorId;
+    int doctorId;
     String name;
     String specialization;
-    String experience;
-    String schedule;
+    int experience;
 }
